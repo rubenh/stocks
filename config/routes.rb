@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  resources :stocks
+  resource :stocks, defaults: { format: 'json' } do
+    post 'info'
+    post 'historical'
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

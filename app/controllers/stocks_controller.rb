@@ -1,12 +1,11 @@
 class StocksController < ApplicationController
-  def index
+
+  def info
+    @stock = YahooFinance.quotes([params[:stock]])
   end
 
-  def create
-    @stock = YahooFinance.quotes([params[:stocks]])
+  def historical
+    @stock = YahooFinance.historical_quotes(params[:stock]).reverse!
   end
 
-  def show
-    @stock = YahooFinance.quotes([params[:stocks]])
-  end
 end

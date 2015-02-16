@@ -16,4 +16,6 @@
 //= require angular-route/angular-route
 //= require angular-rails-templates
 //= require angular-resource/angular-resource
+//= require highstock-release/highstock
+//= require underscore/underscore
 //= require_tree .

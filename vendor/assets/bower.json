@@ -4,6 +4,9 @@
     "angular": "latest",
     "angular-route": "latest",
     "angular-resource": "latest",
-    "bootstrap-sass-official": "latest"
+    "bootstrap-sass-official": "latest",
+    "highcharts-release": "latest",
+    "highstock-release": "latest",
+    "underscore": "latest"
   }
 }

@@ -1,15 +1,15 @@
-angular.module('stocks').controller('StocksController', [ '$scope', '$resource',
-  ($scope, $resource)->
+angular.module('stocks').controller('StocksController', [ '$scope', 'Stock',
+  ($scope, Stock)->
 
     $scope.stockName = 'ORDI.AS'
 
     $scope.hasResults = ->
-      angular.isDefined($scope.stockInfo)
+      return angular.isDefined($scope.stock) &&
+        angular.isDefined($scope.stock.currentPrice)
 
     $scope.search = ->
-      query = $resource('/stocks/', { format: 'json', stocks: $scope.stockName })
+      $scope.stock = new Stock($scope.stockName)
 
-      query.save({}, (data) ->
-        $scope.stockInfo = data
-      )
+      $scope.stock.retrieveHistoricalData()
+      $scope.stock.retrievePrice()
 ])
