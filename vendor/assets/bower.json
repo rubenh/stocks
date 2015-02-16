@@ -2,11 +2,14 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "angular": "latest",
+    "angular-mocks": "latest",
     "angular-route": "latest",
     "angular-resource": "latest",
     "bootstrap-sass-official": "latest",
     "highcharts-release": "latest",
     "highstock-release": "latest",
     "underscore": "latest"
+  },
+  "resolutions": {
   }
 }

@@ -7,7 +7,7 @@ angular.module('stocks').service('SMA',[ function() {
       }
 
       // Take the previous X entries
-      var subArray = list.slice(index - period - 1, index - 1);
+      var subArray = list.slice(index - period, index);
 
       var sum = _.reduce(subArray, function(memo, historyObj) {
         return memo + parseFloat(historyObj.close);
