@@ -1,11 +1,9 @@
-#= require spec_helper
 describe 'SMA', ->
 
   beforeEach(module('stocks'))
 
-  beforeEach(inject (SMA) ->
+  beforeEach inject (SMA) ->
     @sma = SMA
-  )
 
   it 'returns nothing if the range is too short', ->
     expect(@sma.plottableData([], 10)).toEqual([])
