@@ -1,7 +1,7 @@
 angular.module('stocks').service('SMA',[ function() {
 
   this.calculate = function(data, period) {
-    if (data.lenght < period) {
+    if (data.length < period) {
       return;
     }
 
