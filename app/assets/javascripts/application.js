@@ -19,4 +19,5 @@
 //= require angular-resource/angular-resource
 //= require highstock-release/highstock
 //= require underscore/underscore
+//= require_tree ./templates
 //= require_tree .

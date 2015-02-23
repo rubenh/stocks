@@ -24,29 +24,14 @@ angular.module('stocks').factory('Stock',['$resource', 'SMA', 'EMA', function($r
     },
 
     priceAt: function(date) {
-      var matchingPoint = _.find(this.historicalData, function(dataPoint) {
-        return dataPoint.trade_date === date;
-      });
+      var matchingPoint = this.getHistoricalPoint(date);
       return matchingPoint.close;
     },
 
-    smaAt: function(date, period) {
-      var points = this.getDataPointsBefore(date, period);
-      return SMA.calculate(points, period);
-    },
-
-    emaAt: function(date, period) {
-      var points = this.getDataPointsBefore(date, period);
-      return EMA.calculate(points, period);
-    },
-
-    getDataPointsBefore: function(date, period) {
-      var matchingPoint = _.find(this.historicalData, function(dataPoint) {
+    getHistoricalPoint: function(date) {
+      return _.find(this.historicalData, function(dataPoint) {
         return dataPoint.trade_date === date;
       });
-
-      var index = _.indexOf(this.historicalData, matchingPoint);
-      return this.historicalData.slice(index - period + 1, index + 1);
     }
   };
 

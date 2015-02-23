@@ -1,0 +1,14 @@
+<div>
+  <div class="indicator" ng-repeat="indicator in indicators">
+    <input type="checkbox" ng-model="indicator.enabled" id="{{indicator.name }}" />
+    <label for="{{ indicator.name }}">{{ indicator.name }}</label>
+
+    <div ng-repeat="(label, value) in indicator.options">
+      <input type="number" ng-model="indicator.options[label]" id="{{ indicator.name + label">
+      <label for="{{ indicator.name + label }}">{{ label }}</label>
+    </div>
+  </div>
+
+  <button ng-click="updateChart()" type="button">Apply</button>
+  <div class="chart"></div>
+</div>
