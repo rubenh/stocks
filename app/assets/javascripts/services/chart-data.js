@@ -4,7 +4,9 @@ angular.module('stocks').service('ChartData',[ function() {
     return _.reduce(stock.historicalData, function(memo, data, index) {
       var date = data.trade_date;
 
-      var subArray = stock.historicalData.slice(0, index);
+      // Look back for a maximum of 500 days ( performance)
+      var minIndex = index - 100 < 0 ? 0 : index - 500;
+      var subArray = stock.historicalData.slice(minIndex, index);
       var value = indicator.clazz.calculate(subArray, indicator.options);
 
       if (angular.isDefined(value)) {

@@ -10,8 +10,8 @@ angular.module('stocks').service('EMA',['SMA', function(SMA) {
     }
 
     var multiplier = 2 / ( options.period + 1)
-    var pointToday = data.pop();
-    var previousEMA = this.calculate(data, options);
+    var pointToday = data[data.length - 1];
+    var previousEMA = this.calculate(data.slice(0, data.length - 1), options);
 
     return (parseFloat(pointToday.close) - previousEMA) * multiplier + previousEMA;
   };

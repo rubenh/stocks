@@ -5,7 +5,10 @@ angular.module('stocks').service('SMA',[ function() {
       return;
     }
 
-    var sum = _.reduce(data, function(memo, historyObj) {
+    var length = data.length;
+    var subArray = data.slice(length - options.period, length);
+
+    var sum = _.reduce(subArray, function(memo, historyObj) {
       return memo + parseFloat(historyObj.close);
     }, 0);
 
