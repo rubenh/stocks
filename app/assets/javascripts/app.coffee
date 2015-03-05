@@ -12,8 +12,12 @@ stocks.config([ '$routeProvider',
   ($routeProvider)->
     $routeProvider
       .when('/',
-        templateUrl: "index.html"
+        templateUrl: 'index.html'
         controller: 'StocksController'
+      )
+      .when('/positions',
+        templateUrl:  'positions.html'
+        controller:   'PositionsController'
       )
 ])
 
