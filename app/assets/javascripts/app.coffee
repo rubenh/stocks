@@ -1,4 +1,4 @@
-stocks = angular.module('stocks',['templates','ngRoute','ngResource'])
+stocks = angular.module('stocks',['templates','ngRoute','ngResource', 'ngMessages'])
 
 stocks.config ($httpProvider) ->
   authToken = $("meta[name=\"csrf-token\"]").attr("content")

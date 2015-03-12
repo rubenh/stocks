@@ -15,6 +15,7 @@
 //= require angular/angular
 //= require angular-mocks/angular-mocks
 //= require angular-route/angular-route
+//= require angular-messages/angular-messages
 //= require angular-rails-templates
 //= require angular-resource/angular-resource
 //= require highstock-release/highstock

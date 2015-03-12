@@ -5,11 +5,10 @@
     "angular-mocks": "latest",
     "angular-route": "latest",
     "angular-resource": "latest",
+    "angular-messages": "latest",
     "bootstrap-sass-official": "latest",
     "highcharts-release": "latest",
     "highstock-release": "latest",
     "underscore": "latest"
-  },
-  "resolutions": {
   }
 }
